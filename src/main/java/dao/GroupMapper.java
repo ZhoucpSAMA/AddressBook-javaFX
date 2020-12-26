@@ -9,9 +9,13 @@ public interface GroupMapper {
 
     int addGroup(Group group);
 
-    int delGroupByID(Integer g_id);
 
     Group getGroupByName(String g_name);
 
     int updateGroupByID(Group group);
+
+    String getGroupNameByID(Integer g_id);
+
+    int delGroupByName(String g_name);
+
 }

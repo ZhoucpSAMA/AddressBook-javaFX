@@ -13,11 +13,6 @@
         values (#{g_name})
     </insert>
 
-    <delete id="delGroupByID" parameterType="int">
-        delete
-        from `group`
-        where g_id = #{g_id}
-    </delete>
     <select id="getGroupByName" parameterType="String" resultType="Group">
         select * from `group` where g_name = #{g_name}
     </select>
@@ -26,4 +21,10 @@
         set g_name = #{g_name}
         where g_id = #{g_id}
     </update>
+    <select id="getGroupNameByID" resultType="java.lang.String" parameterType="int">
+        select g_name from `group` where g_id = #{g_id}
+    </select>
+    <delete id="delGroupByName" parameterType="java.lang.String">
+        delete from `group`where g_name = #{g_name}
+    </delete>
 </mapper>

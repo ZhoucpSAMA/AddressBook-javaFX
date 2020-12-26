@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.*?>
+<VBox prefHeight="348.0" prefWidth="315.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.GetPersonController">
+    <children>
+        <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="375.0" prefWidth="315.0" VBox.vgrow="ALWAYS">
+            <children>
+                <Button fx:id="getButton" layoutX="26.0" layoutY="290.0" mnemonicParsing="false" onAction="#getPerson" prefHeight="30.0" prefWidth="69.0" text="查 询" />
+                <Button fx:id="exitButton" layoutX="215.0" layoutY="290.0" mnemonicParsing="false" onAction="#onExit" prefHeight="30.0" prefWidth="69.0" text="取 消" />
+                <Label layoutX="26.0" layoutY="20.0" prefHeight="30.0" prefWidth="57.0" text="姓名：">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="26.0" layoutY="66.0" prefHeight="30.0" prefWidth="57.0" text="手机：">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="26.0" layoutY="112.0" prefHeight="30.0" prefWidth="57.0" text="地址：">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <Label layoutX="26.0" layoutY="164.0" prefHeight="30.0" prefWidth="57.0" text="归属组：">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="nameText" layoutX="85.0" layoutY="24.0" prefHeight="23.0" prefWidth="177.0" />
+                <TextField fx:id="phoneText" editable="false" layoutX="85.0" layoutY="70.0" prefHeight="23.0" prefWidth="177.0" />
+                <TextField fx:id="addressText" editable="false" layoutX="85.0" layoutY="116.0" prefHeight="23.0" prefWidth="177.0" />
+                <Label layoutX="26.0" layoutY="212.0" prefHeight="30.0" prefWidth="57.0" text="性别：">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Label>
+            <TextField fx:id="groupText" editable="false" layoutX="85.0" layoutY="168.0" prefHeight="23.0" prefWidth="177.0" />
+            <TextField fx:id="sexText" editable="false" layoutX="85.0" layoutY="216.0" prefHeight="23.0" prefWidth="177.0" />
+            <Label layoutX="70.0" layoutY="258.0" text="请输入姓名后点击查询" textFill="#9d5b5b">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            </children></AnchorPane>
+    </children>
+</VBox>

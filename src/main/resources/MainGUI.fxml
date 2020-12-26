@@ -1,47 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SeparatorMenuItem?>
-<?import javafx.scene.control.TreeView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 <VBox prefHeight="496.0" prefWidth="312.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainController">
     <children>
         <MenuBar VBox.vgrow="NEVER">
             <menus>
                 <Menu mnemonicParsing="false" text="组操作">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="添加组" />
-                        <MenuItem mnemonicParsing="false" text="删除组" />
-                        <MenuItem mnemonicParsing="false" text="修改组名" />
+                        <MenuItem mnemonicParsing="false" onAction="#AddGroup" text="添加组" />
+                        <MenuItem mnemonicParsing="false" onAction="#DelGroup" text="删除组" />
+                        <MenuItem mnemonicParsing="false" onAction="#UpdGroup" text="修改组名" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" onAction="#onExit" text="退出" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="好友操作">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="查询好友" />
-                        <MenuItem mnemonicParsing="false" text="添加好友" />
-                        <MenuItem mnemonicParsing="false" text="修改好友" />
-                        <MenuItem mnemonicParsing="false" text="删除好友" />
+                        <MenuItem mnemonicParsing="false" onAction="#GetPerson" text="查询好友" />
+                        <MenuItem mnemonicParsing="false" onAction="#addPerson" text="添加好友" />
+                        <MenuItem mnemonicParsing="false" onAction="#UpdatePerson" text="修改好友" />
+                        <MenuItem mnemonicParsing="false" onAction="#DelPerson" text="删除好友" />
                     </items>
                 </Menu>
                 <Menu mnemonicParsing="false" text="帮助">
                     <items>
-                        <MenuItem mnemonicParsing="false" text="Powered By 老周" />
+                        <MenuItem mnemonicParsing="false" onAction="#showHelp" text="Powered By 老周" />
                     </items>
                 </Menu>
             </menus>
         </MenuBar>
         <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="375.0" prefWidth="310.0" VBox.vgrow="ALWAYS">
             <children>
-            <Button onAction="#refresh" layoutX="54.0" layoutY="434.0" mnemonicParsing="false" text="刷 新" />
-            <Button onAction="#onExit"  layoutX="196.0" layoutY="434.0" mnemonicParsing="false" text="退 出" />
+            <Button layoutX="54.0" layoutY="434.0" mnemonicParsing="false" onAction="#refresh" text="刷 新" />
+            <Button layoutX="113.0" layoutY="434.0" mnemonicParsing="false" onAction="#excel" text="导出Excel" />
+            <Button layoutX="196.0" layoutY="434.0" mnemonicParsing="false" onAction="#onExit" text="退 出" />
             <StackPane layoutX="9.0" layoutY="10.0" prefHeight="416.0" prefWidth="294.0">
                <children>
                   <TreeView fx:id="tree" prefHeight="200.0" prefWidth="200.0" />

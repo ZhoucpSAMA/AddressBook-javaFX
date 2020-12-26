@@ -8,11 +8,7 @@
         select *
         from person
     </select>
-    <select id="getPersonByGroupID" resultType="Person">
-        select *
-        from person
-        where p_g_id = #{p_g_id}
-    </select>
+
     <insert id="addPerson" parameterType="Person">
         insert into person(p_name, p_phone, p_address, p_sex, p_g_id)
         values (#{p_name}, #{p_phone}, #{p_address}, #{p_sex}, #{p_g_id});
@@ -22,13 +18,23 @@
         from person
         where p_name = #{p_name}
     </delete>
-    <update id="updatePersonByID" parameterType="Person">
+    <update id="updatePersonByName" parameterType="Person">
         update person
         set p_name    = #{p_name},
             p_phone   = #{p_phone},
             p_address = #{p_address},
             p_sex     = #{p_sex},
             p_g_id    = #{p_g_id}
-        where p_id = #{p_id}
+        where p_name = #{p_name}
     </update>
+    <select id="getPersonByName" parameterType="java.lang.String" resultType="Person">
+        select *
+        from person
+        where p_name = #{p_name}
+    </select>
+    <delete id="delPersonByGroupID" parameterType="int">
+        delete
+        from person
+        where p_g_id = #{p_g_id}
+    </delete>
 </mapper>
